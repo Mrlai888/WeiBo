@@ -7,25 +7,26 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: '/photo.jpg' }],
   ],
   serviceWorker: true, // 是否开启 PWA
-  base: '/', // 这是部署到github相关的配置
+  base: '/WeiBo/', // 这是部署到github相关的配置
   markdown: {
-    lineNumbers: false // 代码块显示行号
+    // lineNumbers: false // 代码块显示行号
+    extractHeaders: ['h2', 'h3', 'h4']
   },
   themeConfig: {
-    lastUpdated: '更新时间', 
-    displayAllHeaders: true ,
+    lastUpdated: '更新时间',
+    displayAllHeaders: true,
     nav: [ // 导航栏配置
       { text: '首页', link: '/' },
       { text: '个人中心', link: '/home/' },
       { text: '前端基础', link: '/html/' },
       {
-        text: 'js进阶',link: '/js/' ,
+        text: 'js进阶', link: '/js/',
       },
       {
-        text: 'vue',link: '/vue/',
+        text: 'vue', link: '/vue/',
       },
       {
-        text: 'react',link: '/react/'
+        text: 'react', link: '/react/'
       },
       {
         text: "高级",
@@ -57,7 +58,7 @@ module.exports = {
         'html1',
         'closure'
       ],
-      '/js/':[
+      '/js/': [
         '',
         'async',
         'jquery',
@@ -65,30 +66,30 @@ module.exports = {
         'update/object',
         'update/prop',
       ],
-      '/react/':[
+      '/react/': [
         '',
         'period',
         'router'
       ],
-      '/vue/':[
+      '/vue/': [
         '',
         'period',
         'router'
       ],
-      '/more/':[
+      '/more/': [
         '',
         'arithmetic',
         'read',
         'see',
         'singe'
       ],
-      '/':[
+      '/': [
         '',
         'home'
       ]
 
-    }
-      
+    },
+    sidebarDepth: 1,
   },
 
 }
