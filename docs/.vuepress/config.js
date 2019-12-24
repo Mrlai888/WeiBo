@@ -10,7 +10,7 @@ module.exports = {
   base: '/WeiBo/', // 这是部署到github相关的配置
   markdown: {
     // lineNumbers: false // 代码块显示行号
-    extractHeaders: ['h2', 'h3', 'h4']
+    extractHeaders: ['h2', 'h3','h4']
   },
   themeConfig: {
     lastUpdated: '更新时间',
@@ -53,6 +53,9 @@ module.exports = {
     ],
     // 侧边栏配置
     sidebar: {
+      '/home/':[
+        ''
+      ],
       '/html/': [
         '',
         'html1',
@@ -60,16 +63,14 @@ module.exports = {
       ],
       '/js/': [
         '',
-        'async',
-        'jquery',
-        'update/',
-        'update/object',
-        'update/prop',
+        'home',
+        'update'
       ],
       '/react/': [
         '',
-        'period',
-        'router'
+        'home',
+        'router',
+        'props'
       ],
       '/vue/': [
         '',
@@ -89,7 +90,7 @@ module.exports = {
       ]
 
     },
-    sidebarDepth: 1,
+    sidebarDepth: 2,
   },
 
 }
