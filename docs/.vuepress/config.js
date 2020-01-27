@@ -17,7 +17,7 @@ module.exports = {
     displayAllHeaders: true,
     nav: [ // 导航栏配置
       { text: '首页', link: '/' },
-      { text: '个人中心', link: '/home/' },
+      { text: '个人中心', link: '/me/' },
       { text: '前端基础', link: '/html/' },
       {
         text: 'js进阶', link: '/js/',
@@ -32,9 +32,9 @@ module.exports = {
         text: "高级",
         items: [
           {
-            text: "算法",
+            text: "拓展",
             items: [
-              { text: "冒泡", link: "/more/arithmetic" },
+              { text: "json登录注册", link: "/more/login" },
               { text: "去重", link: "/more/singe" }
             ]
           },
@@ -53,9 +53,8 @@ module.exports = {
     ],
     // 侧边栏配置
     sidebar: {
-      '/home/':[
-        '',
-        'me'
+      '/me/':[
+        ''
       ],
       '/html/': [
         '',
@@ -71,7 +70,6 @@ module.exports = {
         '',
         'home',
         'router',
-        'props'
       ],
       '/vue/': [
         '',
@@ -86,8 +84,7 @@ module.exports = {
         'singe'
       ],
       '/': [
-        '',
-        'home'
+        ''
       ]
 
     },

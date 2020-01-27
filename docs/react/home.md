@@ -123,12 +123,193 @@ this.handleClick.bind(this)
 
 ### 受控组件
 
-1. 表单元素value值完全由value值控制，那么这个组件叫受控组件。
-2. radio是通过checked来控制的， checkbox也是通过checked赖控制的
+1. 表单元素value值完全由数据控制，数据的变化需要监听onChange事件，只能在事件里修改数据， 那么这个组件叫受控组件。
+2. radio是通过checked来控制的， checkbox也是通过checked来控制的
 
 ### 非受控组件
 
+1. 表单的值不是通过数据控制，value已经定义好
+2. value通过refs获取dom 对象的方式获取  
 
+## react-props
+
+### props 的默认值设置
+
+1. 设置组件的defaultProps属性
+
+```js
+// 类组件
+class Hello extends React.Component{
+  Hello.defaultProps = {
+    props1: defaultProps1,
+    propsX:defaultPropsX
+  }
+}
+// 函数组件
+const Hello = ()=>{
+  Hello.defaultProps = {
+    props1: defaultProps1,
+    propsX:defaultPropsX
+  }
+}
+
+如果提供了 public class filed 实验语法，可以使用静态属性
+class Hello extends React.Component{
+  static propTypes = {
+    props: defaultProps
+  }
+}
+```
+
+### prop的校验
+
+#### 自 React v15.5 以后，react-propsTypes 已经移入prop-types包中  安装"yarn add prop-types"
+
+```js
+import pt from prop-types
+
+// 类数组
+class Hello extends React.Component{
+  Hello.propTypes = {
+    props: pt.String
+  }
+}
+
+const Hello = ()=>{
+  Hello.propTypes = {
+    props: pt.Number
+  }
+}
+
+===如果开启了es6的public class filed 新语法可以设置静态属性 static
+class Hello extends react.Component{
+  static propTypes = {
+    props: pt.Boolean
+  }
+}
+```
+### 组件通信context的两种使用方式
+
+#### context使用
+ 0. 用于父子、祖孙组件通信 类似vue的provide与inject
+ 1. 创建context对象， React.createContext()
+ 2. let myContext = React.createContext()
+ 3. context 对象有两个组件，一个叫供应商（Provider） 一个是消费者（Consumer）
+
+ #### 第一种使用方式
+ 使用Provider组件包裹住提供数据的组件，并设置value属性传递一个对象，属性值就是传递的数据
+ 用Consumer组件包裹消组件，组件开始标签与闭合标签之间是一个函数，返回值是消费者组件的内容，函数接受一个参数是供应商provider传下来的值
+
+ #### 消费者（Consumer）的第二种使用种方法
+ 给消费者设置一个contextType静态属性，属性值是一个context对象/ 这是消费者就会多出一个context属性这个属性可以直接拿到数据
+
+```js
+import React,{Component} from 'react'
+import ReactDom from 'react-dom'
+
+const myContext = React.createContext()
+const { Provider , Consumer } = myContext
+
+class App extends React.Component{
+
+  state = {
+    color: "yellow",
+    fontSize: 24
+  }
+  render() {
+    return(
+      <Provider value = {{
+        color:this.state.color,
+        fontSize: this.state.color
+      }}>
+        <h1>App</h1>
+        <button onClick = {()=>{
+          this.handleClick()
+        }}>点我改绿色</button>
+
+        <One></One>
+      </Provider>
+    )
+  }
+  handleClick(){
+    this.setState({
+      color: "green",
+      fontSize: 34
+    })
+  }
+}
+
+
+class One extends Component{
+  
+  render(){
+    return(
+      <div>
+        <h1>one</h1>
+        <br />
+        <Two></Two>
+      </div>
+    )
+  }
+}
+
+// 第一种方法
+class Two extends Component{
+  render(){
+    return(
+      <Consumer>
+        {
+          // data 是provider传下来的数据
+          (data)=>{
+            return(
+              <div>
+                <h2 style={{color:data.color,fontSize:data.fontSize+'px'}}>我是二</h2>
+                <Three></Three>
+              </div>
+            )
+          }
+        }
+      </Consumer>
+    )
+  }
+}
+// 第二种方法
+class Three extends Component{
+  static contextType = myContext
+  render (){
+    return(
+      <div>
+        <h2 style={{color:this.context.color}}>我是三</h2>
+      </div>
+    )
+  }
+}
+ReactDom.render(<App/>,document.getElementById('root'))
+
+```
+### react中Hook使用
+Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
+
+#### 基础Hook
+useState:  更改state数据
+```js
+const App1 = () => {
+
+  const [name, setName] = useState('张三')
+  const [age, setAge] = useState(18)
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{age}</p>
+      <button onClick={() => {
+        setName('李四')
+        setAge(24)
+      }}>修改 name</button>
+    </div>
+  )
+}
+```
+useE
 
 <style>
 h3{

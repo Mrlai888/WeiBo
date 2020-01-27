@@ -5,7 +5,7 @@ heroImage: /title.gif
 heroText: 个人技术文档网站
 tagline: 爱敲代码的90后大叔
 actionText: 了解我 →
-actionLink: /home/
+actionLink: /me/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
@@ -16,4 +16,5 @@ features:
 footer: 我要敲代码
 
 ---
-<!-- [跳转](https://mrlai888.github.io/WeiBo/)  -->
+
+<!-- <Hello /> -->
