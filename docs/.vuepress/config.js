@@ -34,15 +34,17 @@ module.exports = {
           {
             text: "拓展",
             items: [
-              { text: "json登录注册", link: "/more/login" },
-              { text: "去重", link: "/more/singe" }
+              { text: "混合开发", link: "/more/Hybrid" },
+              { text: "登录注册服务端", link: "/more/login" }
             ]
           },
           {
-            text: "设计模式",
+            text: "更多",
             items: [
-              { text: '观察者', link: '/more/see' },
-              { text: '发布订阅', link: '/more/read' }
+              { text: '云开发', link: '/more/yunServer' },
+              { text: 'typeScript', link: '/more/ts' },
+              { text: '发布订阅', link: '/more/singe' }
+
             ]
           }
 
@@ -78,10 +80,11 @@ module.exports = {
       ],
       '/more/': [
         '',
-        'arithmetic',
-        'read',
-        'see',
-        'singe'
+        'Hybrid',
+        'login',
+        'yunServer',
+        'singe',
+        'ts'
       ],
       '/': [
         ''

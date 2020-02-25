@@ -70,6 +70,27 @@ children: children属性是这三个属性中比较特殊的一个，它的值�
 ###  路由拦截
 react的路由拦截需要自己去封装高阶组件
 ```js
+//设置条件
+const fakeAuth = {
+  isAuthenticated: false, // 登录状态
+
+  /**
+   * 登录方法
+   * @param {Function} cb 回调函数
+   */
+  authenticate(cb) {
+    this.isAuthenticated = true;
+    setTimeout(cb, 1000); // fake async
+  },
+
+  // 退出登录方法
+  signout(cb) {
+    this.isAuthenticated = false;
+    setTimeout(cb, 100);
+  }
+};
+
+//普通组件
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -86,7 +107,32 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       )
     }
   />
-);
+)
+
+// 实现一个高阶函数
+const privateRoute = ({ component: Component, ...rest }) => {
+  // 返回需要返回一个组件
+  return class extends React.Component {
+    render () {
+      return (
+        <Route {...rest} render={
+          (props) => {
+            console.log(props)
+            if (fakeAuth.isAuthenticated) {
+              <Component {...props} />
+            } else {
+              // return <Redirect to="/login"></Redirect>
+              return <Redirect to={{
+                pathname: '/login',
+                state: props.match.url
+              }}></Redirect>
+            }
+          }
+        }></Route>
+      )
+    }
+  }
+}
 ```
 
 

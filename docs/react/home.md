@@ -287,10 +287,10 @@ class Three extends Component{
 ReactDom.render(<App/>,document.getElementById('root'))
 
 ```
-### react中Hook使用
+## react中Hook使用
 Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
 
-#### 基础Hook
+### useState
 useState:  更改state数据
 ```js
 const App1 = () => {
@@ -309,7 +309,120 @@ const App1 = () => {
   )
 }
 ```
-useE
+### useEffect
+```js
+//useEffect hook 用法
+// 生命周期函数
+// 1，componentDidMount
+// 2. componentDidupdate
+
+// useEffect(() => {
+// 可以在函数里写构造函数
+//   console.log('didMount、didUpdate')
+// })
+
+// 清除定时器。全局监听事件
+// ？如何让 useEffect 实现卸载前
+// ！给 effect 函数里面再返回一个函数，返回的函数会在组件销毁之前执行要有return（）
+const App2 = () => {
+  const [name, setName] = useState('张三')
+  useEffect(() => {
+    let timer = setInterval(() => {
+      console.log(1);
+    }, 1000);
+    return () => {
+      console.log('在APP2销毁之前执行')
+      clearInterval(timer)
+    }
+  })
+  return (
+    <div>
+      <p>{name}</p>
+      <button onClick={
+        () => {
+          setName('李四')
+        }
+      }>点击修改名字</button>
+    </div>
+  )
+}
+//怎样 用useEffect实现性能优化，只有数据变化才能够执行
+// 给useEffect传递第二个参数，是一个数组，数组中写上需要监听的数据
+const App3 = () => {
+  const [name, setName] = useState('张三')
+  const [age, setAge] = useState(18)
+
+  useEffect(() => {
+    console.log('触发事件时我执行')
+  }, [name])//数组里的数据就是监听事件
+  return (
+    <div>
+      <h2>useEffect</h2>
+      <p>{name}</p>
+      <p>{age}</p>
+      <button onClick={
+        () => {
+          setName('李四')
+        }
+      }>改名</button>
+      <button onClick={
+        () => {
+          setAge(24)
+        }
+      }>该年龄</button>
+    </div>
+  )
+}
+```
+### useContext
+```js
+// useContext 接受一个context对象
+// 创建上下文对象
+const MyCtx = React.createContext()
+const App4 = () => {
+  const [color, setColor] = useState('red')
+  return (
+    <MyCtx.Provider value={color}>//Provider 是组件要大写字母开头
+      <div>
+        <h1>app4</h1>
+        <button onClick={
+          () => {
+            setColor("yellow")
+          }
+        }>改色</button>
+        <hr />
+        <One></One>
+      </div>
+    </MyCtx.Provider>
+  )
+}
+const One = () => {
+  return (
+    <div>
+      <h1>One</h1>
+      <br />
+      <Two></Two>
+    </div>
+  )
+}
+const Two = () => {
+  return (
+    <div>
+      <h2>Two</h2>
+      <br />
+      <Three></Three>
+    </div>
+  )
+}
+const Three = () => {
+  const value = useContext(MyCtx)
+  return (
+    <div>
+      <h2 style={{ color: value }}>three</h2>
+    </div>
+  )
+}
+```
 
 <style>
 h3{
