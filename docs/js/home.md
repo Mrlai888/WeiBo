@@ -1,17 +1,18 @@
 ---
 title: "js基础"
 ---
-# js基础
-## script的异步加载
 
-## ajax请求
+## js基础
 
-## 面向对象编程
+### 六大类型
 
-## dom事件
-### onclick 事件
-### onchange事件
+```js
+number string undefined bool NAN bool
 
-## 闭包
-### 闭包运用
+```
+### 作用域
+```js
+<p> 未声明的变量（函数内或全局范围内）属于全局变量<p/>
+
+```
 

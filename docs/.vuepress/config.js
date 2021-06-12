@@ -43,7 +43,7 @@ module.exports = {
             items: [
               { text: '云开发', link: '/more/yunServer' },
               { text: 'typeScript', link: '/more/ts' },
-              { text: '发布订阅', link: '/more/singe' }
+              { text: 'webpack', link: '/more/webpack' }
 
             ]
           }
@@ -83,7 +83,7 @@ module.exports = {
         'Hybrid',
         'login',
         'yunServer',
-        'singe',
+        'webpack',
         'ts'
       ],
       '/': [
