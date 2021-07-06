@@ -18,9 +18,9 @@ module.exports = {
     nav: [ // 导航栏配置
       { text: '首页', link: '/' },
       { text: '个人中心', link: '/me/' },
-      { text: '前端基础', link: '/html/' },
+      { text: 'html/css', link: '/html/' },
       {
-        text: 'js进阶', link: '/js/',
+        text: 'js', link: '/js/',
       },
       {
         text: 'vue', link: '/vue/',
@@ -29,13 +29,14 @@ module.exports = {
         text: 'react', link: '/react/'
       },
       {
-        text: "高级",
+        text: "more",
         items: [
           {
             text: "拓展",
             items: [
               { text: "混合开发", link: "/more/Hybrid" },
-              { text: "登录注册服务端", link: "/more/login" }
+              { text: "登录注册服务端", link: "/more/login" },
+              { text: "Mysql", link: "/more/mysql" }
             ]
           },
           {
@@ -84,7 +85,8 @@ module.exports = {
         'login',
         'yunServer',
         'webpack',
-        'ts'
+        'ts',
+        'mysql'
       ],
       '/': [
         ''
