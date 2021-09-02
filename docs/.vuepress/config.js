@@ -76,9 +76,9 @@ module.exports = {
       ],
       '/vue/': [
         '',
+        'frameStudy',
         'period',
         'router',
-        'frameStudy',
         'vuex'
       ],
       '/more/': [

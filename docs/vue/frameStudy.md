@@ -92,7 +92,7 @@ title: 'vue框架学习'
 > - 方法调用（方法必须需要先声明）
 > - ...
 >
-> ~~~html
+> ```html
 > <template>
 >     <div >
 >         <!-- 直接使用变量名 -->
@@ -122,7 +122,7 @@ title: 'vue框架学习'
 > <style lang="scss" scoped>
 > </style>
 > 
-> ~~~
+> ```
 
 
 
@@ -159,7 +159,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > - 本网站内部数据可以使用，来自第三方的数据不可使用
 > - v-html：https://cn.vuejs.org/v2/api/#v-html
 >
-> ~~~html
+> ```html
 > <template>
 >     <div>
 >         <!-- 插值表达式形式 -->
@@ -182,13 +182,13 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > </script>
 > <style lang="scss" scoped>
 > </style>
-> ~~~
+> ```
 
 > 3. v-pre	填充原始信息
 >
 > - 跳过表达式的编译过程，显示原始信息
 >
-> ~~~html
+> ```html
 > <template>
 >     <div >
 >        <span v-pre>{{ this will not be compiled }}</span>
@@ -207,7 +207,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > </script>
 > <style lang="scss" scoped>
 > </style>
-> ~~~
+> ```
 
 ## 2、v-once
 
@@ -220,7 +220,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > **示例：**
 >
-> ~~~html
+> ```html
 > <template>
 >     <div>
 > 	<h3>{{message}}</h3>
@@ -246,7 +246,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > </script>
 > <style lang="scss" scoped>
 > </style>
-> ~~~
+> ```
 
 
 
@@ -256,17 +256,17 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > 场景：复用某个数据的时候会使用。例如：飞猪官网
 >
-> ~~~html
+> ```html
 > <!-- v-bind绑定href属性值 -->
 > <a v-bind:href='url' v-bind:target='type'>跳转</a>
 > 
 > <!-- v-bind绑定href属性值（简写形式） -->
 > <a :href='url' :target='type'>跳转</a>
-> ~~~
+> ```
 >
 > **示例代码**
 >
-> ~~~html
+> ```html
 > <template>
 > <div>
 > <a :href="url" :target="type" :alt="alt">{{alt}}</a>
@@ -287,7 +287,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > </script>
 > <style lang="scss" scoped>
 > </style>
-> ~~~
+> ```
 
 
 
@@ -299,7 +299,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > **示例：**
 >
-> ~~~html
+> ```html
 > <!-- 常规写法 -->
 > <button v-on:click="num++"></button>
 > <!-- 缩写 -->
@@ -307,11 +307,11 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 > 
 > <!-- 事件处理函数调用：直接写函数名 -->
 > <button @click="say"></button>
-> ~~~
+> ```
 >
 > 如果事件处理函数为自定义函数，则需要先进行定义，定义的方式如下：
 >
-> ~~~javascript
+> ```javascript
 > ...
 > data: {
 >     ...
@@ -322,7 +322,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >     },
 >     ....
 > }
-> ~~~
+> ```
 >
 > ```vue
 > <template>
@@ -361,13 +361,13 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 > 2. **事件处理函数传参**
 >
-> ~~~html
+> ```html
 > <!-- 事件处理函数调用：直接写函数名 -->
 > <button @click="say"></button>
 > 
 > <!-- 事件处理函数调用：常规调用 -->
 > <button @click="say('hi',$event)"></button>
-> ~~~
+> ```
 >
 > 在不传递自定义参数的时候，上述两种用法均可以使用；但是如果需要传递自定义参数的话，则需要使用第2种方式。
 >
@@ -378,7 +378,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > **示例代码**
 >
-> ~~~html
+> ```html
 > <template>
 >     <div >
 >         <div id="big" @click="say('大娃',$event)"></div>
@@ -421,7 +421,7 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >         background-color: pink;
 >     }
 > </style>
-> ~~~
+> ```
 
 
 
@@ -431,9 +431,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > 使用示例：
 >
-> ~~~html
+> ```html
 > <!-- 停止冒泡 --><button @click.stop="doThis"></button><!-- 阻止默认行为 --><button @click.prevent="doThis"></button><!--  串联修饰符 --><button @click.stop.prevent="doThis"></button>
-> ~~~
+> ```
 >
 > 示例
 >
@@ -451,9 +451,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 > 在监听键盘事件时，我们经常需要检查详细的按键。Vue 允许为 `v-on` 在监听键盘事件时添加按键修饰符。
 >
-> ~~~html
+> ```html
 > <!-- 只有在 `key` 是 `Enter` 回车键的时候调用 --><input v-on:keyup.enter="submit"><!-- 只有在 `key` 是 `Delete` 回车键的时候调用 --><input v-on:keyup.delete="handle">
-> ~~~
+> ```
 >
 > 更多按键修饰符请参考官方文档：[https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6](https://cn.vuejs.org/v2/guide/events.html#按键修饰符)
 
@@ -469,21 +469,21 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > - 数组遍历使用示例：
 >
-> ~~~html
+> ```html
 > <template>       <div >        <ul>            <li v-for="(item, index) in fruits" :key="index">{{item}}</li>        </ul>    </div></template><script>export default {    // name:'demo',    data() {        return {            fruits: ['apple','pear','banana','orange']        };    },    methods:{    }};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 >
 > - 细节：key的作用，提高性能，不影响显示效果（`如果没有id，可以考虑使用索引替代`）
 >
-> ~~~html
+> ```html
 > <ul>    <li :key='item.id' v-for='(item,index) in fruits'>{{item}}</li></ul>
-> ~~~
+> ```
 >
 > - 对象遍历使用示例：
 >
-> ~~~html
+> ```html
 > <template>       <div >        <ul>            <li v-for="(item, index) in obj" :key="index">{{item}}</li>        </ul>    </div></template><script>export default {    // name:'demo',    data() {        return {        obj: {		username: 'zhangsan',		age: 28,		gender: 'male'	}        };    },    methods:{    }};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 
 
@@ -505,9 +505,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 > 2. 使用示例：
 >
-> ~~~html
+> ```html
 > <template>    <div ">    <div v-if="score >= 90">优秀</div><div v-else-if="score >= 80 && score < 90">良好</div><div v-else-if="score >= 70 && score < 80">一般</div><div v-else>不及格</div><!-- v-show --><div v-show='flag'>测试v-show</div>    </div></template><script>export default {    // name:'demo',    data() {        return {        score: 60,	    flag:false        };    },    methods:{    }};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > 3. 思考：v-if系列与v-show的区别是什么？
 >
@@ -519,9 +519,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > 补充：v-if系列指令、v-show指令可以与v-for指令结合起来使用（循环+分支）。例如：
 >
-> ~~~html
+> ```html
 > <ul>    <li v-for='(value,key,index) in obj' v-show='value==25'>{{v}}</li></ul>
-> ~~~
+> ```
 
 
 
@@ -533,17 +533,17 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > - 对象语法（`用于控制开关切换`）
 >
-> ~~~html
+> ```html
 > <template>    <div >        <div :class="{active: isActive}">class样式</div>    </div></template><script>export default {    // name:'demo',    data() {        return {        isActive:true        };    },    methods:{    }};</script><style lang="scss" scoped> .active {	color: red;}</style>
-> ~~~
+> ```
 >
 > 
 >
 > - 常用写法
 >
-> ~~~html
+> ```html
 > <template>    <div>        <div :class="activeClass">数组写法</div>    </div></template><script>export default {    // name:'demo',    data() {        return {            activeClass:'active'        };    },    methods:{    }};</script><style lang="scss" scoped> .active {	color: red;}</style>
-> ~~~
+> ```
 
 
 
@@ -551,17 +551,17 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 >
 > - 对象语法
 >
-> ~~~html
+> ```html
 > <template>    <div >        <div :style="{color: redColor, fontSize: '20px'}">对象写法</div>    </div></template><script>export default {    // name:'demo',    data() {        return {            redColor: 'red'        };    },    methods:{    }};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 >
 > 
 >
 > - 数组语法
 >
-> ~~~html
+> ```html
 > <template>    <div >        <div :style="[color, fontSize]">数组写法</div>    </div></template><script>export default {    // name:'demo',    data() {        return {            color: {                'color':'red'            },            fontSize:{                'font-size':'16px'            }        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 
 
@@ -573,41 +573,41 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 > 1. 普通文本框上的使用
 >
-> ~~~html
+> ```html
 > <template>    <div >    <p>{{message}}</p>    <input type='text' v-model='message'>    <!--    v-model其实是`语法糖`,它是下面这种写法的简写    语法糖：这种语法对语言的功能并没有影响，但是更方便程序员使用    -->    <p>{{msg}}</p>    <input type='text' :value='msg' @input='msg=$event.target.value'/>    </div></template><script>export default {    // name:'demo',    data() {        return {            message:'',            msg:''        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > 2. 多行文本框上的使用
 >
-> ~~~html
+> ```html
 > <template>   <div >     <p>{{message}}</p>    <textarea v-model="message"></textarea></div></template><script type='text/javascript'>export default {    data() {        return {            message:'',        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > 3. 单个复选框上的使用
 >
-> ~~~html
+> ```html
 > <template>   <div >    <input type="checkbox" v-model="checked">	</div></template><script type='text/javascript'> export default {    data() {        return {            checked:true        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > 4. 多个复选框上的使用
 >
-> ~~~html
+> ```html
 > <template>   <div >    <div>{{checkedNames}}</div>    <input type="checkbox" value="html" v-model="checkedNames">    <input type="checkbox" value="css" v-model="checkedNames">    <input type="checkbox" value="js" v-model="checkedNames"></div></template><script type='text/javascript'> export default {    data() {        return {         // 如果数组中有对应的value值，则此checkbox会被选中		checkedNames:[]        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 >
 > **注意：此种用法需要`input`标签提供`value`属性，并且需要注意属性的大小写要与数组元素的大小写一致**
 
 > 5. 单选按钮上的使用
 >
-> ~~~html
+> ```html
 > <template>   <div >    男<input type="radio" name="sex" value="男" v-model="sex">	  女<input type="radio" name="sex" value="女" v-model="sex"></div></template><script type='text/javascript'> export default {    data() {        return {         sex: '女'        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > 6. 下拉框上的使用
 >
-> ~~~html
+> ```html
 > <template><div>    <select v-model="selected">        <option>请选择</option>        <option>HTML</option>        <option>CSS</option>        <option>JS</option>    </select></div></template><script type='text/javascript'> export default {    data() {        return {         selected: 'JS'        };    },};</script><style lang="scss" scoped></style>
-> ~~~
+> ```
 
 > - 补充说明：修饰符
 >
@@ -627,9 +627,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 **示例**
 
-~~~html
+```html
 <template><div >    <!--只要 num 还没有发生改变，多次访问 cfn 计算属性会立即返回之前的计算结果-->    <div>{{ cfn }}</div>    <div>{{ cfn }}</div>    <!-- 调用methods中的方法的时候  他每次会重新调用 -->    <div>{{ fn() }}</div>    <div>{{ fn() }}</div></div></template><script type="text/javascript">     export default {        data: {            num: 10,        },        // 方法        methods: {            fn() {                console.log("methods");                return this.num;            },        },        // 计算属性        computed: {            cfn() {                console.log("computed");                return this.num;            },        },    };</script>
-~~~
+```
 
 **注意：**只要依赖的数据源不发生改变，计算属性里的对应方法就只被调用1次，其它时候被调用时则使用缓存。
 
@@ -645,9 +645,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 **参考代码：**
 
-~~~html
+```html
 <template><div>    <p><input type="text" v-model='firstName' placeholder="姓" /></p>    <p><input type="text" v-model='lastName' placeholder="名" /></p>    <p><input type="text" v-model='fullName' placeholder="全名" /></p></div> </template><script type="text/javascript">    export default {        data: {            firstName: '',            lastName: '',            fullName: ''        },        watch: {            firstName: function(val) {                this.fullName = val + ' ' + this.lastName            },            lastName: function(val) {                this.fullName = this.firstName + ' ' + val            }        }    }</script>
-~~~
+```
 
 > 注意点：
 >
@@ -660,9 +660,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 **使用对象的数据形式改写上述案例参考代码：**
 
-~~~html
+```html
 <template><div>    <p><input type="text" v-model='userinfo.firstName' placeholder="姓" /></p>    <p><input type="text" v-model='userinfo.lastName' placeholder="名" /></p>    <p><input type="text" v-model='userinfo.fullName' placeholder="全名" /></p></div> </template><script type="text/javascript">     export default {     data: {            userinfo: {                firstName: '',                lastName: '',                fullName: ''            }        },        watch: {            userinfo: {                // handler是固定的写法                handler(val) {                    this.userinfo.fullName = val.firstName + ' ' + val.lastName                    // 对象支持引用传值                    val.fullName = val.firstName + ' ' + val.lastName                },                deep: true            }        }};</script>
-~~~
+```
 
 
 
@@ -677,9 +677,9 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 **声明语法：**
 
-~~~javascript
+```javascript
 // 全局过滤器Vue.filter('过滤器名称',function(value[,arg1,arg2...]){	//过滤器业务逻辑	return ....})// 局部过滤器el: '#app',data: {},filters: {    过滤器名称: function(value[,arg1,arg2...]){        return something    },    // ....}
-~~~
+```
 
 > 过滤器的处理函数中的第一个参数**固定**是`绑定的待处理数据`，后续可以根据需要添加自定义参数
 
@@ -687,17 +687,17 @@ v-text指令与v-html指令【相当于innertHTML和innerText】
 
 **使用语法：**
 
-~~~html
+```html
 <!-- 过滤器使用 --><div>{{msg | upper}}</div><!-- 过滤器允许连续使用，“前 → 后”按顺序执行 --><div>{{msg | upper | lower}}</div><!-- 过滤器支持在v-bind中使用 --><div v-bind:id='id | formatId'></div><!-- 过滤器支持传参 --><div>{{msg | mysub(1,2)}}</div>
-~~~
+```
 
 >  提醒：计划在Vue3.0干掉。
 
 **案例**
 
-~~~html
+```html
 <template>    <div >        <h4>{{msg | toUpper}}</h4>        <h4>{{msg | toLower}}</h4>    </div> </template><script type="text/javascript">   export default {    data() {        return {        };    },     filters:        // 转字母为小写        toLower: (val) => {           return val.toLowerCase()         },          // 转字母为大写        toUpper(val){        return val.toUpperCase()    	}      }};</script>
-~~~
+```
 
 
 
@@ -762,9 +762,9 @@ Vue生命周期的主要阶段：
 
 **示例代码**
 
-~~~html
+```html
 // Parent.vue<template>    <div>        <Child :msg="message"></Child>    </div></template><script>import Child from './Child.vue'export default {    name: 'Parent',    components: {         Child     },    data() {        return {            message:'hello world'        };    },};</script><style lang="scss" scoped></style>// Child.vue<template>    <div>        <div>{{msg}}</div>    </div></template><script>export default {    name: 'Child',        // 数组形式    props:['msg'],    // 对象形式    // props: {    //   msg: String,    //   msg:{    //     type:String,    //     default:'hello'    //   }    // },    data() {        return {                    };    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 
 
@@ -778,9 +778,9 @@ Vue生命周期的主要阶段：
 
 **示例代码：每点击子组件按钮给父组件字体加9像素**
 
-~~~html
+```html
 // Parent.vue<template>    <div>        <Child @addFontSize="add"></Child>        <p :style="{fontSize:fontsize+'px',color:'red'}">{{msg}}</p>    </div></template><script>import Child from './Child.vue'export default {    name: 'Parent',    components: {         Child     },    data() {        return {            msg:'hello world',            fontsize:16        };    },    methods:{        add(value){            this.fontsize += value        }    }};</script><style lang="scss" scoped></style>// Child.vue<template>    <div>        <button @click="addSize">点我给父组件字体加9px</button>    </div></template><script>export default {    name: 'Child',        // 数组形式    data() {        return {                    };    },    methods: {        addSize() {            this.$emit('addFontSize',9)        },    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 
 
@@ -794,33 +794,33 @@ Vue生命周期的主要阶段：
 
 - 建立事件中心
 
-  - ~~~javascript
+  - ```javascript
     // main.jsimport Vue from 'vue';import App from './App.vue';import '../config/element';Vue.prototype.$eventBus = new Vue()new Vue({  render: h => h(App)}).$mount('#app')
-    ~~~
+    ```
 
 - 传递数据
 
-  - ~~~javascript
+  - ```javascript
     this.$eventBus.$emit('自定义事件名',传递的数据)
-    ~~~
+    ```
 
 - 接收数据
 
-  - ~~~javascript
+  - ```javascript
     this.$eventBus.$on('自定义事件名'[,callback])
-    ~~~
+    ```
 
 - 销毁事件中心
 
-  - ~~~javascript
+  - ```javascript
     this.$eventBus.$off('自定义事件名')
-    ~~~
+    ```
 
 示例
 
-~~~html
+```html
 // Child.vue<template>    <div>        <p>{{msg}}</p>    </div></template><script>export default {    name: 'Child',    data() {        return {            msg:'你好'        };    },    mounted() {        this.$eventBus.$on('eventFn',(val)=>{            this.msg = val        })    },    destroyed(){        this.$eventBus.$off('eventFn')    }};</script><style lang="scss" scoped></style>// Child1.vue<template>    <div>        <button @click="byValue">点我传值给兄弟Child</button>    </div></template><script>export default {    name: 'Child1',    data() {        return {                    };    },    methods: {        byValue(){            this.$eventBus.$emit('eventFn','hello')        }    },};</script><style lang="scss" scoped></style>// Parent.vue<template>    <div>        <Child></Child>        <Child1></Child1>    </div></template><script>import Child from './Child.vue';import Child1 from './Child1.vue'export default {    name: 'Parent',    components: {         Child,        Child1     },    data() {        return {        };    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 
 
@@ -831,9 +831,9 @@ Vue生命周期的主要阶段：
 - `ref`放在标签上，拿到的是原生节点。`ref`放在组件上 拿到的是组件实例
 - 原理：在父组件中通过`ref`属性（会被注册到父组件的`$refs`对象上）拿到组件/DOM对象，从而得到组件/DOM中的**所有的信息**，也包括值
 
-~~~html
+```html
 <template>  <div><!-- 普通DOM --><p ref="p">hello</p><!-- 子组件 --><child-comp ref="child"></child-comp>           </div></template><script>export default {    data() {        return {        };    },      mounted: function(){        console.log(this.$refs.p);        console.log(this.$refs.child);        // this.$refs.component.msg = '123' // 修改值    }};</script><style lang="scss" scoped></style>
-~~~
+```
 
 > 注意：
 >
@@ -863,9 +863,9 @@ Vue生命周期的主要阶段：
 
 **示例代码**
 
-~~~html
+```html
 // Parent.vue<template>    <div>        <Child>            // 插槽内容            hello        </Child>    </div></template><script>import Child from './Child.vue';export default {    name: 'Parent',    components: {         Child,     },    data() {        return {        };    },};</script><style lang="scss" scoped></style>// Child.vue<template>    <div>        // 匿名插槽        <slot></slot>    </div></template><script>export default {    name: 'Child',    data() {        return {                    };    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 > 注意：子组件的`slot`标签中允许书写内容，当父组件不往子组件传递内容时，`slot`中的内容才会被展示出来。
 
@@ -877,9 +877,9 @@ Vue生命周期的主要阶段：
 
 **`上中下`形式网页布局示例代码**
 
-~~~html
+```html
 // Parent.vue<template>    <div>        <Child>            // 插槽内容            <h1 slot="header">这里可能是一个页面标题</h1>                        <p slot="footer">这里有一些联系信息</p>        </Child>    </div></template><script>import Child from './Child.vue';export default {    name: 'Parent',    components: {         Child,     },    data() {        return {        };    },};</script><style lang="scss" scoped></style>// Child.vue<template>    <div>        <slot name = 'header'></slot>         <p>主要内容的一个段落。</p>        <slot name='footer'></slot>    </div></template><script>export default {    name: 'Child',    data() {        return {                    };    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 > 具名插槽存在的意义就是为了解决在单个页面中同时使用多个插槽。
 
@@ -893,9 +893,9 @@ Vue生命周期的主要阶段：
 
 **示例代码**
 
-~~~html
+```html
 // Parent.vue<template>    <div>        <Child>            <p slot-scope="props">                {{props.value}}            </p>        </Child>    </div></template><script>import Child from './Child.vue';export default {    name: 'Parent',    components: {         Child,     },    data() {        return {        };    },};</script><style lang="scss" scoped></style>// Child.vue<template>    <div>        <slot :value='values'></slot>    </div></template><script>export default {    name: 'Child',    data() {        return {            values:1000        };    },};</script><style lang="scss" scoped></style>
-~~~
+```
 
 
 
@@ -915,9 +915,9 @@ Vue生命周期的主要阶段：
 
 如果在vue-cli创建项目时没有勾选上`vue-router`选项，此时就需要手动的来安装它（
 
-~~~shell
+```shell
 npm i -S vue-router
-~~~
+```
 
 ### 1.3、Vue Router基本使用
 
@@ -930,9 +930,9 @@ Vue Router的基本使用步骤：
 - 把路由挂载到Vue根实例中
 - **添加路由组件渲染容器到对应组件中（占坑）**
 
-~~~javascript
+```javascript
 // router/index.js// 引入相关库文件import Vue from 'vue'import VueRouter from 'vue-router'// VueRouter引入到Vue类中Vue.use(VueRouter)// 组件的引入import Home from '../views/Home.vue';import User from '../views/user/index.vue';import Login from '../views/login/index.vue';import Role from '../views/role/index.vue'// 定义路由规则const routes = const routes = [  {    path: '/',    name: 'Login',    component: Login,  },  {    path: '/login',    name: 'Login',    component: Login  },  {    path: '/home',    name: 'Home',    component: Home,    redirect:'/home/user',    children: [      {        path: 'user',        name: 'User',        component: User,      },    ]  },  {    path: '/about',    name: 'About',    // 懒加载简单来说就是延迟加载或按需加载，即在需要的时候的时候进行加载。    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')  },]// 创建路由实例const router = new VueRouter({  routes  // 传递规则的时候，传递的规则的属性名必须是`routes`})// 暴露router让外界使用export default router// main.js // 挂载根实例（main.js）// 记得要通过 router 配置参数注入路由，// 从而让整个应用都有路由功能import Vue from 'vue'import App from './App.vue'import router from './router'import '../config/element'Vue.config.productionTip = falsenew Vue({  router,  render: h => h(App)}).$mount('#app')// app.vue<!-- html，添加路由组件渲染容器 --><templete><div id="app">	<router-view></router-view></div></templete>
-~~~
+```
 
 
 
@@ -947,9 +947,9 @@ Vue Router的基本使用步骤：
 
 它就是先在页面中定义好跳转的路由规则，vueRouter中通过 router-link组件来完成
 
-~~~html
-<router-link to="path">xxx</router-link><!-- 	to 要跳转到的路由规则  string|object	to="users"	:to="{path:'path'}"-->
-~~~
+```html
+<!-- <router-link to="path">xxx</router-link>	to 要跳转到的路由规则  string|object	to="users"	:to="{path:'path'}" -->
+```
 
 
 
@@ -957,9 +957,9 @@ Vue Router的基本使用步骤：
 
 简单来说，编程式导航就是通过`JavaScript`来实现路由跳转
 
-~~~javascript
-this.$router.push("/login");this.$router.push({ path:"/login" });this.$router.push({ path:"/login",query:{username:"jack"} });this.$router.push({ name:'user' , params: {id:123} });this.$router.go( n );//n为数字  负数为回退
-~~~
+```javascript
+// this.$router.push("/login");this.$router.push({ path:"/login" });this.$router.push({ path:"/login",query:{username:"jack"} });this.$router.push({ name:'user' , params: {id:123} });this.$router.go( n );//n为数字  负数为回退
+```
 
 
 
@@ -971,19 +971,19 @@ this.$router.push("/login");this.$router.push({ path:"/login" });this.$router.pu
 
 >  核心思想：在**父路由组件**的模板内容中添加子路由链接和子路由**填充位（占坑）**，同时在路由规则处为父路由配置**children属性**指定子路由规则：
 
-~~~javascript
+```javascript
 routes: [  {       path: "/user",       component: User, 	//这个不能丢      // 通过children属性为/user添加子路由规则      children:[          { path: "index", component: Index },          { path: "add", component: Add },      ]  }]
-~~~
+```
 
-~~~html
+```html
 <!-- 需要在 User组件中定义一个router-view 用于嵌套路由的渲染显示 --><router-view></router-view>
-~~~
+```
 
 提个醒：后续也可直接写死地址来实现`嵌套路由`的地址效果，例如有以下代码：
 
-~~~javascript
-{ path: "/film", redirect: "/nowplaying", component: Film },{ path: "/nowplaying", component: NowPlaying },{ path: "/comingsoon", component: ComingSoon },
-~~~
+```javascript
+// { path: "/film", redirect: "/nowplaying", component: Film },{ path: "/nowplaying", component: NowPlaying },{ path: "/comingsoon", component: ComingSoon },
+```
 
 这三个路由也可以实现带有`film`的前缀，给人一种使用了父子路由的幻象。
 
@@ -993,9 +993,9 @@ routes: [  {       path: "/user",       component: User, 	//这个不能丢     
 
 所谓动态路由就是路由规则中有部分规则是动态变化的，不是固定的值，需要去匹配取出数据（即`路由参数`）。
 
-~~~javascript
+```javascript
 // 传递参数idvar router = new VueRouter({    // routes是路由规则数组     routes: [        { path: '/user/:id', component: User },        // 此处的“:”只是在声明的时候写，在使用的时候不需要写“:”    ]})// 组件中获取id值...mounted(){    let id = this.$route.params.id}...
-~~~
+```
 
 
 
@@ -1003,9 +1003,9 @@ routes: [  {       path: "/user",       component: User, 	//这个不能丢     
 
 定义可选路由参数的方式很简单，只需要在原有的路由参数声明位置后面加上个`?`即可。例如：
 
-~~~javascript
-{ path: "showdetail/:id?", component: ShowDetail },
-~~~
+```javascript
+// { path: "showdetail/:id?", component: ShowDetail },
+```
 
 
 
@@ -1015,13 +1015,13 @@ routes: [  {       path: "/user",       component: User, 	//这个不能丢     
 
 通过一个名称来标识一个路由显得更方便一些，特别是在链接一个路由，或者是执行一些跳转的时候。
 
-~~~javascript
+```javascript
 // 路由const router = new VueRouter({  routes: [    {      path: '/user/:id',      name: 'user',      component: User    }  ]})
-~~~
+```
 
-~~~html
-<!-- 声明路由 --><router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link>
-~~~
+```html
+<!-- 声明路由<router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link> -->
+```
 
 
 
@@ -1031,9 +1031,9 @@ routes: [  {       path: "/user",       component: User, 	//这个不能丢     
 
 - 全局守卫
 
-~~~javascript
+```javascript
 // 全局前置守卫  路由规则文件中定义// 当一个导航触发时,触发前置守卫，// to: Route: 即将要进入的目标 路由对象// from: Route: 当前导航正要离开的路由// next: Function: 一定要调用该next方法，否则路由不向下执行。router.beforeEach((to, from, next) => {  // ...})// 全局后置钩子// 此钩子不会接受 next 函数也不会改变导航本身router.afterEach((to, from) => {  // ...})
-~~~
+```
 
 > - 全局守卫定义在路由规则文件中
 > - 参数含义：
@@ -1045,9 +1045,9 @@ routes: [  {       path: "/user",       component: User, 	//这个不能丢     
 
 - 组件内守卫
 
-~~~javascript
+```javascript
 // 可以在路由组件内直接定义以下路由导航守卫const Foo = {  template: `...`,  beforeRouteEnter (to, from, next) {    // 不能获取组件实例 `this`（这个时候还没有进入到to对应的组件中，所以拿不到this）    // 因为当守卫执行前，组件实例还没被创建  },  beforeRouteUpdate (to, from, next) {    // 在当前路由改变，但是该组件被复用时调用    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。    // 可以访问组件实例 `this`  },  beforeRouteLeave (to, from, next) {    // 导航离开该组件的对应路由时调用    // 可以访问组件实例 `this`  }}
-~~~
+```
 
 > 手动更改地址栏中的路由不会触发`beforeRouteUpdate`和`beforeRouteLeave`钩子函数。
 
