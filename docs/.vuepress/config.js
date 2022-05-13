@@ -61,8 +61,8 @@ module.exports = {
       ],
       '/html/': [
         '',
-        'html1',
-        'closure'
+        'css',
+        'html'
       ],
       '/js/': [
         '',
@@ -72,7 +72,10 @@ module.exports = {
       '/react/': [
         '',
         'home',
+        'period',
         'router',
+        'hook',
+        'components'
       ],
       '/vue/': [
         '',
