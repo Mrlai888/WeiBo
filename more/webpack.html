@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack | 技术文档</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="manifest" href="/WeiBo/photo.jpg">
+    <link rel="apple-touch-icon" href="/WeiBo/photo.jpg">
+    <meta name="description" content="我的个人网站">
+    
+    <link rel="preload" href="/WeiBo/assets/css/0.styles.408a9db9.css" as="style"><link rel="preload" href="/WeiBo/assets/js/app.de0b0b11.js" as="script"><link rel="preload" href="/WeiBo/assets/js/2.36bf89d1.js" as="script"><link rel="preload" href="/WeiBo/assets/js/23.098efe96.js" as="script"><link rel="prefetch" href="/WeiBo/assets/js/10.e33a5240.js"><link rel="prefetch" href="/WeiBo/assets/js/11.0acf05f2.js"><link rel="prefetch" href="/WeiBo/assets/js/12.3f073600.js"><link rel="prefetch" href="/WeiBo/assets/js/13.def5cb41.js"><link rel="prefetch" href="/WeiBo/assets/js/14.67d442a3.js"><link rel="prefetch" href="/WeiBo/assets/js/15.6aa6a43b.js"><link rel="prefetch" href="/WeiBo/assets/js/16.0dbfc0a7.js"><link rel="prefetch" href="/WeiBo/assets/js/17.0bbf9d85.js"><link rel="prefetch" href="/WeiBo/assets/js/18.6c0115c7.js"><link rel="prefetch" href="/WeiBo/assets/js/19.8af7ae2f.js"><link rel="prefetch" href="/WeiBo/assets/js/20.6b8bc693.js"><link rel="prefetch" href="/WeiBo/assets/js/21.258cb1b2.js"><link rel="prefetch" href="/WeiBo/assets/js/22.51e83a58.js"><link rel="prefetch" href="/WeiBo/assets/js/24.798d0f95.js"><link rel="prefetch" href="/WeiBo/assets/js/25.72d6a3ee.js"><link rel="prefetch" href="/WeiBo/assets/js/26.8d0786bf.js"><link rel="prefetch" href="/WeiBo/assets/js/27.1dacffe6.js"><link rel="prefetch" href="/WeiBo/assets/js/28.a1f2bc7b.js"><link rel="prefetch" href="/WeiBo/assets/js/29.c6239048.js"><link rel="prefetch" href="/WeiBo/assets/js/3.eb8d5ed9.js"><link rel="prefetch" href="/WeiBo/assets/js/30.8546514e.js"><link rel="prefetch" href="/WeiBo/assets/js/31.d392c00d.js"><link rel="prefetch" href="/WeiBo/assets/js/32.23b9c222.js"><link rel="prefetch" href="/WeiBo/assets/js/33.19b86591.js"><link rel="prefetch" href="/WeiBo/assets/js/4.7f0c1c53.js"><link rel="prefetch" href="/WeiBo/assets/js/5.607e5447.js"><link rel="prefetch" href="/WeiBo/assets/js/6.6bb92c25.js"><link rel="prefetch" href="/WeiBo/assets/js/7.4c3ce0c9.js"><link rel="prefetch" href="/WeiBo/assets/js/8.815f15a3.js"><link rel="prefetch" href="/WeiBo/assets/js/9.e0a3c4b2.js">
+    <link rel="stylesheet" href="/WeiBo/assets/css/0.styles.408a9db9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/WeiBo/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/WeiBo/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/WeiBo/me/" class="nav-link">
+  个人中心
+</a></div><div class="nav-item"><a href="/WeiBo/html/" class="nav-link">
+  html/css
+</a></div><div class="nav-item"><a href="/WeiBo/js/" class="nav-link">
+  js
+</a></div><div class="nav-item"><a href="/WeiBo/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/WeiBo/react/" class="nav-link">
+  react
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><span class="title">more</span> <span class="arrow down"></span></button> <button type="button" aria-label="more" class="mobile-dropdown-title"><span class="title">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          拓展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/Hybrid.html" class="nav-link">
+  混合开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/login.html" class="nav-link">
+  登录注册服务端
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/mysql.html" class="nav-link">
+  Mysql
+</a></li></ul></li><li class="dropdown-item"><h4>
+          更多
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/yunServer.html" class="nav-link">
+  云开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/ts.html" class="nav-link">
+  typeScript
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/webpack.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/Mrlai888" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/WeiBo/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/WeiBo/me/" class="nav-link">
+  个人中心
+</a></div><div class="nav-item"><a href="/WeiBo/html/" class="nav-link">
+  html/css
+</a></div><div class="nav-item"><a href="/WeiBo/js/" class="nav-link">
+  js
+</a></div><div class="nav-item"><a href="/WeiBo/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/WeiBo/react/" class="nav-link">
+  react
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><span class="title">more</span> <span class="arrow down"></span></button> <button type="button" aria-label="more" class="mobile-dropdown-title"><span class="title">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          拓展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/Hybrid.html" class="nav-link">
+  混合开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/login.html" class="nav-link">
+  登录注册服务端
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/mysql.html" class="nav-link">
+  Mysql
+</a></li></ul></li><li class="dropdown-item"><h4>
+          更多
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/yunServer.html" class="nav-link">
+  云开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/ts.html" class="nav-link">
+  typeScript
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/webpack.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/Mrlai888" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/WeiBo/more/" aria-current="page" class="sidebar-link">更多扩展</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/#axios请求拦截器添加token" class="sidebar-link">axios请求拦截器添加token</a></li></ul></li><li><a href="/WeiBo/more/Hybrid.html" class="sidebar-link">混合开发（Hybrid）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/Hybrid.html#混合开发" class="sidebar-link">混合开发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/Hybrid.html#原生调用js" class="sidebar-link">原生调用js</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/Hybrid.html#js调用原生" class="sidebar-link">js调用原生</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/Hybrid.html#总结" class="sidebar-link">总结</a></li></ul></li></ul></li><li><a href="/WeiBo/more/login.html" class="sidebar-link">后端代码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#json文件实现后端服务" class="sidebar-link">json文件实现后端服务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#登录注册" class="sidebar-link">登录注册</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#express实现后端服务" class="sidebar-link">express实现后端服务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#链接数据库" class="sidebar-link">链接数据库</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#实例化表" class="sidebar-link">实例化表</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/login.html#express实现登录注册" class="sidebar-link">express实现登录注册</a></li></ul></li></ul></li><li><a href="/WeiBo/more/yunServer.html" class="sidebar-link">云开发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#云数据库" class="sidebar-link">云数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#连接云数据库" class="sidebar-link">连接云数据库</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#数据库的增删查改" class="sidebar-link">数据库的增删查改</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#云存储" class="sidebar-link">云存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#上传文件" class="sidebar-link">上传文件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#上传图片" class="sidebar-link" style="padding-left:3rem;">上传图片</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#上传excel文件" class="sidebar-link" style="padding-left:3rem;">上传excel文件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#打开excel文档" class="sidebar-link" style="padding-left:3rem;">打开excel文档</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#下载文件" class="sidebar-link">下载文件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#删除文件" class="sidebar-link">删除文件</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#云函数" class="sidebar-link">云函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/yunServer.html#云函数的调用" class="sidebar-link">云函数的调用</a></li></ul></li></ul></li><li><a href="/WeiBo/more/webpack.html" aria-current="page" class="active sidebar-link">webpack</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#webpack" class="sidebar-link">webpack</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#webpack-打包构建原理" class="sidebar-link">webpack 打包构建原理</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#webpack-核心" class="sidebar-link">webpack 核心</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#webpack-简易搭建流程" class="sidebar-link">webpack 简易搭建流程</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#运行-webpack-三种方法" class="sidebar-link">运行 webpack 三种方法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#配置入口出口" class="sidebar-link">配置入口出口</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#常用插件" class="sidebar-link">常用插件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#常用转换器" class="sidebar-link">常用转换器</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#webpack-ts-react" class="sidebar-link">webpack+ts+react</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#脚手架生成" class="sidebar-link">脚手架生成</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#自主搭建" class="sidebar-link">自主搭建</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#新建webpack-config-js文件" class="sidebar-link" style="padding-left:3rem;">新建webpack.config.js文件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#新建-babelrc-文件-配置如下" class="sidebar-link" style="padding-left:3rem;">新建.babelrc 文件，配置如下</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/webpack.html#在package-json文件里配置启动命令" class="sidebar-link" style="padding-left:3rem;">在package.json文件里配置启动命令：</a></li></ul></li></ul></li><li><a href="/WeiBo/more/ts.html" class="sidebar-link">TypeScript</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#一-ts的介绍安装与开发工具" class="sidebar-link">一. ts的介绍安装与开发工具</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_1-1-ts介绍" class="sidebar-link">1-1 ts介绍</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_2-2-ts的安装" class="sidebar-link">2-2  ts的安装</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_2-3-vscode-的配置" class="sidebar-link">2-3 vscode 的配置</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#二-ts的数据类型" class="sidebar-link">二. ts的数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_2-1数据类型-基础" class="sidebar-link">2-1数据类型-基础：</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#布尔值" class="sidebar-link" style="padding-left:3rem;">布尔值</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#数字" class="sidebar-link" style="padding-left:3rem;">数字</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#字符串" class="sidebar-link" style="padding-left:3rem;">字符串</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#数组" class="sidebar-link" style="padding-left:3rem;">数组</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#元组" class="sidebar-link" style="padding-left:3rem;">元组</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#枚举" class="sidebar-link" style="padding-left:3rem;">枚举</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#any" class="sidebar-link" style="padding-left:3rem;">any</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#void" class="sidebar-link" style="padding-left:3rem;">void</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_2-2数据类型-高级" class="sidebar-link">2-2数据类型-高级</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#类型推断" class="sidebar-link" style="padding-left:3rem;">类型推断</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#什么是类型推断" class="sidebar-link" style="padding-left:3rem;">什么是类型推断</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#联合类型" class="sidebar-link" style="padding-left:3rem;">联合类型</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#访问联合类型的属性或方法" class="sidebar-link" style="padding-left:3rem;">访问联合类型的属性或方法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#联合类型赋值的类型推断" class="sidebar-link" style="padding-left:3rem;">联合类型赋值的类型推断</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#null-和-undefined" class="sidebar-link" style="padding-left:3rem;">Null 和 Undefined</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#never" class="sidebar-link" style="padding-left:3rem;">Never</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#symbol" class="sidebar-link" style="padding-left:3rem;">Symbol</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#三-ts中的函数详解" class="sidebar-link">三. ts中的函数详解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-1-函数的类型" class="sidebar-link">3-1 函数的类型</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#函数声明" class="sidebar-link" style="padding-left:3rem;">函数声明</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#函数表达式" class="sidebar-link" style="padding-left:3rem;">函数表达式</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-2-用接口定义函数的形状" class="sidebar-link">3-2 用接口定义函数的形状</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-3-可选参数" class="sidebar-link">3-3 可选参数</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-4-参数默认值" class="sidebar-link">3-4 参数默认值</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-5-剩余参数" class="sidebar-link">3-5 剩余参数</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_3-6-重载" class="sidebar-link">3-6 重载</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#四-接口" class="sidebar-link">四. 接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_4-1-接口定义" class="sidebar-link">4-1 接口定义</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#简单的例子-2" class="sidebar-link" style="padding-left:3rem;">简单的例子</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_4-2-可选属性" class="sidebar-link">4-2 可选属性</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_4-3-任意属性-索引签名" class="sidebar-link">4-3 任意属性（索引签名）</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_4-4-只读属性" class="sidebar-link">4-4 只读属性</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#五-类" class="sidebar-link">五. 类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_5-1-类的概念" class="sidebar-link">5-1 类的概念</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_5-2-es6中类的用法" class="sidebar-link">5-2 ES6中类的用法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#属性和方法" class="sidebar-link" style="padding-left:3rem;">属性和方法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#类的继承" class="sidebar-link" style="padding-left:3rem;">类的继承</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#存取器" class="sidebar-link" style="padding-left:3rem;">存取器</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#静态方法" class="sidebar-link" style="padding-left:3rem;">静态方法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_5-3-typescript中类的用法" class="sidebar-link">5-3 TypeScript中类的用法</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#public-private-和-protected" class="sidebar-link" style="padding-left:3rem;">public private 和 protected</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#readonly" class="sidebar-link" style="padding-left:3rem;">readonly</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#抽象类" class="sidebar-link" style="padding-left:3rem;">抽象类</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#六-类和接口" class="sidebar-link">六. 类和接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_6-1-类实现接口" class="sidebar-link">6-1 类实现接口</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_6-2-接口继承接口" class="sidebar-link">6-2 接口继承接口</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_6-3-接口继承类" class="sidebar-link">6-3 接口继承类</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_6-4-混合类型" class="sidebar-link">6-4 混合类型</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#七-泛型" class="sidebar-link">七. 泛型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_7-1-简单的例子" class="sidebar-link">7-1 简单的例子</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_7-2-多个类型的参数" class="sidebar-link">7-2 多个类型的参数</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_7-3-泛型约束" class="sidebar-link">7-3 泛型约束</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_7-4-泛型接口" class="sidebar-link">7-4 泛型接口</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#_7-5-泛型类" class="sidebar-link">7-5 泛型类</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#八-迭代器和生成器" class="sidebar-link">八. 迭代器和生成器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#可迭代性" class="sidebar-link">可迭代性</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#for-of-语句" class="sidebar-link">for..of 语句</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/ts.html#for-of-vs-for-in-语句" class="sidebar-link">for..of vs. for..in 语句</a></li></ul></li></ul></li><li><a href="/WeiBo/more/mysql.html" class="sidebar-link">Mysql</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/more/mysql.html#mysql-常用指令" class="sidebar-link">Mysql 常用指令</a></li><li class="sidebar-sub-header"><a href="/WeiBo/more/mysql.html#nodejs连接mysql" class="sidebar-link">nodejs连接mysql</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="webpack"><a href="#webpack" class="header-anchor">#</a> webpack</h2> <ol><li>现代化前端最流行的一款 构建打包工具</li></ol> <h3 id="webpack-打包构建原理"><a href="#webpack-打包构建原理" class="header-anchor">#</a> webpack 打包构建原理</h3> <ol><li>基于某个入口文件，分析这个文件中的依赖，接着继续向下寻找依赖所属的依赖</li></ol> <p>循环往复，直到没有依赖为止，最后进行打包处理</p> <h3 id="webpack-核心"><a href="#webpack-核心" class="header-anchor">#</a> webpack 核心</h3> <ol><li>入口（entry）</li> <li>出口（output）</li> <li>转换器 依赖 (loader)</li> <li>插件 （plugin）</li></ol> <h3 id="webpack-简易搭建流程"><a href="#webpack-简易搭建流程" class="header-anchor">#</a> webpack 简易搭建流程</h3> <ol><li><p>新建文件 mkdir webpack-demo //终端（Linux）</p></li> <li><p>初始化 npm init -y / yarn init -y</p></li> <li><p>安装开发依赖 npm install -D webpack webpack-cli /yarn add webpack webpack-cli -D (最好选择本地安装，不创建多个 webpack 项目是会冲突 ）</p></li></ol> <h3 id="运行-webpack-三种方法"><a href="#运行-webpack-三种方法" class="header-anchor">#</a> 运行 webpack 三种方法</h3> <ol><li>./node_modules/bin/webpack（错误） node_modules\bin\webpack(需使用反斜杠 ）</li> <li>npx webpack</li> <li>npm 脚本方式 ：npm run build</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// package.json</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><ol><li><p>更多内容查看官网<a href="https://www.webpackjs.com/concepts/" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p>配置文件都在 webpack.config.js 文件完成</p></li></ol> <h3 id="配置入口出口"><a href="#配置入口出口" class="header-anchor">#</a> 配置入口出口</h3> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 入口</span>
+  entry<span class="token operator">:</span> <span class="token string">&quot;./src/index.js&quot;</span><span class="token punctuation">,</span>
+  <span class="token comment">// 出口</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    filename<span class="token operator">:</span> <span class="token string">&quot;main.js&quot;</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// __dirname  相对路径  __filename 绝对路径</span>
+</code></pre></div><h3 id="常用插件"><a href="#常用插件" class="header-anchor">#</a> 常用插件</h3> <ol><li>自动生成 dist/index.html 的插件：html-webpack-plugin ,
+安装插件：</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev html<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin
+</code></pre></div><p>配置插件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;path&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;html-webpack-plugin&quot;</span><span class="token punctuation">)</span> <span class="token comment">// 引入</span>
+plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// 可以传递一个template选项，来控制使用哪个模板页面来生成</span>
+    template<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;./public/index.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre></div><ol start="2"><li>copy-wepack-plugin 插件 可以将某个 文件里的内容全部考至到出口文件</li></ol> <p>安装插件：</p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev copy<span class="token operator">-</span>webpack<span class="token operator">-</span>plugin
+</code></pre></div><p>配置插件：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//比如：把public 文件里的内容全部考到出口文件（dist）</span>
+<span class="token keyword">const</span> CopyWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;copy-webpack-plugin&quot;</span><span class="token punctuation">)</span> <span class="token comment">// 引入</span>
+plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token keyword">new</span> <span class="token class-name">CopyWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token comment">// 将 public 文件夹中的文件内容，全部拷贝至 出口文件夹中</span>
+      from<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;./public&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre></div><h3 id="常用转换器"><a href="#常用转换器" class="header-anchor">#</a> 常用转换器</h3> <ol><li>安装 css 转换器</li></ol> <ul><li>css-loader: 将 css 文件转换成 webpack 能够识别的模块文件</li> <li>style-loader: 将 css 写入到 html 页面的 style 标签中</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> style<span class="token operator">-</span>loader css<span class="token operator">-</span>loader
+</code></pre></div><ol start="2"><li>安装 scss 转换器</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> sass<span class="token operator">-</span>loader node<span class="token operator">-</span>sass
+</code></pre></div><ol start="3"><li>安装图片转换器</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> url<span class="token operator">-</span>loader
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>module<span class="token operator">:</span> <span class="token punctuation">{</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">//加载css</span>
+    <span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+      <span class="token comment">//多个转换器使用时用倒序手法</span>
+      use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;style-loader&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 加载图片</span>
+    <span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.(png|jpg|gif|svg)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;file-loader&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//加载sass</span>
+    <span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.(scss|sass)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;style-loader&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;sass-loader&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="webpack-ts-react"><a href="#webpack-ts-react" class="header-anchor">#</a> webpack+ts+react</h2> <h3 id="脚手架生成"><a href="#脚手架生成" class="header-anchor">#</a> 脚手架生成</h3> <div class="language-js extra-class"><pre class="language-js"><code>yarn create react<span class="token operator">-</span>app my<span class="token operator">-</span>test<span class="token operator">-</span>app <span class="token operator">--</span>template typescript
+
+</code></pre></div><h3 id="自主搭建"><a href="#自主搭建" class="header-anchor">#</a> 自主搭建</h3> <ol><li>安装 react 相关模板</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>
+npm install react react<span class="token operator">-</span>dom <span class="token operator">--</span>save<span class="token operator">-</span>dev
+npm install <span class="token operator">-</span><span class="token constant">D</span> @types<span class="token operator">/</span>react @types<span class="token operator">/</span>react<span class="token operator">-</span>dom
+
+</code></pre></div><ol start="2"><li>安装 webpack 模块</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>
+npm install <span class="token operator">-</span><span class="token constant">D</span> webpack webpack<span class="token operator">-</span>cli webpack<span class="token operator">-</span>dev<span class="token operator">-</span>server
+
+</code></pre></div><ol start="3"><li>安装 typescript</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>
+npm install <span class="token operator">-</span><span class="token constant">D</span> typescript
+
+</code></pre></div><ol start="4"><li>如果需要使用 Sass 和 SCSS，我们需要其他的 loader</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm i node<span class="token operator">-</span>sass sass<span class="token operator">-</span>loader style<span class="token operator">-</span>loader css<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre></div><ol start="5"><li>将ts代码编译成js代码模块</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> awesome<span class="token operator">-</span>typescript<span class="token operator">-</span>loader
+
+</code></pre></div><ol start="6"><li>babel模块</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> babel babel<span class="token operator">-</span>core babel<span class="token operator">-</span>preset<span class="token operator">-</span>latest babel<span class="token operator">-</span>preset<span class="token operator">-</span>react
+</code></pre></div><ol start="7"><li>初始化</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>
+下载模块之后，生成node_modules和<span class="token keyword">package</span><span class="token operator">-</span>lock<span class="token punctuation">.</span>json文件，需要手动生成<span class="token keyword">package</span><span class="token punctuation">.</span>json文件。生成tsconfig<span class="token punctuation">.</span>json文件。
+npm init
+tsc <span class="token operator">--</span>init
+
+</code></pre></div><h4 id="新建webpack-config-js文件"><a href="#新建webpack-config-js文件" class="header-anchor">#</a> 新建webpack.config.js文件</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;path&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;webpack&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span>  HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token comment">// 入口文件</span>
+  entry<span class="token operator">:</span> <span class="token string">'./src/index.tsx'</span><span class="token punctuation">,</span> 
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> __dirname<span class="token punctuation">,</span>
+    filename<span class="token operator">:</span> <span class="token string">&quot;bundle.js&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+      <span class="token comment">// 解析jsx文件类型</span>
+        test<span class="token operator">:</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.jsx?$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token comment">// </span>
+        use<span class="token operator">:</span><span class="token punctuation">{</span>
+          loader<span class="token operator">:</span><span class="token string">&quot;babel-loader&quot;</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span><span class="token punctuation">{</span>
+           presets<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">&quot;@babel/env&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;@babel/react&quot;</span><span class="token punctuation">]</span>
+       	  <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">//配置sass</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.s(a|c)ss$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">'style-loader'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">'css-loader'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">'sass-loader'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+       <span class="token punctuation">{</span>
+         test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.ts(x?)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+         use<span class="token operator">:</span> <span class="token punctuation">[</span>
+           <span class="token punctuation">{</span>
+             loader<span class="token operator">:</span> <span class="token string">'awesome-typescript-loader'</span><span class="token punctuation">,</span>
+             options<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+           <span class="token punctuation">}</span>
+         <span class="token punctuation">]</span>
+       <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 文件引用不需要后缀名 import xx from 'xxx'</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.tsx'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.jsx'</span><span class="token punctuation">]</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+    inline<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//实时刷新</span>
+    hot<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 模块热替换机制</span>
+    host<span class="token operator">:</span> <span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> <span class="token comment">//设置服务器的主机号，默认是localhost</span>
+    port<span class="token operator">:</span> <span class="token number">9000</span><span class="token punctuation">,</span>
+    compress<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    open<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 打开浏览器，默认false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// plugins: [</span>
+  <span class="token comment">//   new HtmlWebpackPlugin({ //打包输出HTML</span>
+  <span class="token comment">//     filename: './index.html',  // public/index.html</span>
+  <span class="token comment">//     template: 'index.html'</span>
+  <span class="token comment">//   }),</span>
+  <span class="token comment">//   // new webpack.HotModuleReplacementPlugin()</span>
+  <span class="token comment">// ],</span>
+  mode<span class="token operator">:</span> <span class="token string">&quot;development&quot;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="新建-babelrc-文件-配置如下"><a href="#新建-babelrc-文件-配置如下" class="header-anchor">#</a> 新建.babelrc 文件，配置如下</h4> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;presets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;react&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es2015&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;stage-0&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>index<span class="token punctuation">.</span>tsx
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./components/index'</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>App<span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span>tsx
+
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>div<span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="在package-json文件里配置启动命令"><a href="#在package-json文件里配置启动命令" class="header-anchor">#</a> 在package.json文件里配置启动命令：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server --config webpack.config.js&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">6/12/2021, 6:20:36 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/WeiBo/more/yunServer.html" class="prev">
+        云开发
+      </a></span> <span class="next"><a href="/WeiBo/more/ts.html">
+        TypeScript
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/WeiBo/assets/js/app.de0b0b11.js" defer></script><script src="/WeiBo/assets/js/2.36bf89d1.js" defer></script><script src="/WeiBo/assets/js/23.098efe96.js" defer></script>
+  </body>
+</html>

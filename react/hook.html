@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自定义HOOK | 技术文档</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="manifest" href="/WeiBo/photo.jpg">
+    <link rel="apple-touch-icon" href="/WeiBo/photo.jpg">
+    <meta name="description" content="我的个人网站">
+    
+    <link rel="preload" href="/WeiBo/assets/css/0.styles.408a9db9.css" as="style"><link rel="preload" href="/WeiBo/assets/js/app.de0b0b11.js" as="script"><link rel="preload" href="/WeiBo/assets/js/2.36bf89d1.js" as="script"><link rel="preload" href="/WeiBo/assets/js/26.8d0786bf.js" as="script"><link rel="prefetch" href="/WeiBo/assets/js/10.e33a5240.js"><link rel="prefetch" href="/WeiBo/assets/js/11.0acf05f2.js"><link rel="prefetch" href="/WeiBo/assets/js/12.3f073600.js"><link rel="prefetch" href="/WeiBo/assets/js/13.def5cb41.js"><link rel="prefetch" href="/WeiBo/assets/js/14.67d442a3.js"><link rel="prefetch" href="/WeiBo/assets/js/15.6aa6a43b.js"><link rel="prefetch" href="/WeiBo/assets/js/16.0dbfc0a7.js"><link rel="prefetch" href="/WeiBo/assets/js/17.0bbf9d85.js"><link rel="prefetch" href="/WeiBo/assets/js/18.6c0115c7.js"><link rel="prefetch" href="/WeiBo/assets/js/19.8af7ae2f.js"><link rel="prefetch" href="/WeiBo/assets/js/20.6b8bc693.js"><link rel="prefetch" href="/WeiBo/assets/js/21.258cb1b2.js"><link rel="prefetch" href="/WeiBo/assets/js/22.51e83a58.js"><link rel="prefetch" href="/WeiBo/assets/js/23.098efe96.js"><link rel="prefetch" href="/WeiBo/assets/js/24.798d0f95.js"><link rel="prefetch" href="/WeiBo/assets/js/25.72d6a3ee.js"><link rel="prefetch" href="/WeiBo/assets/js/27.1dacffe6.js"><link rel="prefetch" href="/WeiBo/assets/js/28.a1f2bc7b.js"><link rel="prefetch" href="/WeiBo/assets/js/29.c6239048.js"><link rel="prefetch" href="/WeiBo/assets/js/3.eb8d5ed9.js"><link rel="prefetch" href="/WeiBo/assets/js/30.8546514e.js"><link rel="prefetch" href="/WeiBo/assets/js/31.d392c00d.js"><link rel="prefetch" href="/WeiBo/assets/js/32.23b9c222.js"><link rel="prefetch" href="/WeiBo/assets/js/33.19b86591.js"><link rel="prefetch" href="/WeiBo/assets/js/4.7f0c1c53.js"><link rel="prefetch" href="/WeiBo/assets/js/5.607e5447.js"><link rel="prefetch" href="/WeiBo/assets/js/6.6bb92c25.js"><link rel="prefetch" href="/WeiBo/assets/js/7.4c3ce0c9.js"><link rel="prefetch" href="/WeiBo/assets/js/8.815f15a3.js"><link rel="prefetch" href="/WeiBo/assets/js/9.e0a3c4b2.js">
+    <link rel="stylesheet" href="/WeiBo/assets/css/0.styles.408a9db9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/WeiBo/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/WeiBo/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/WeiBo/me/" class="nav-link">
+  个人中心
+</a></div><div class="nav-item"><a href="/WeiBo/html/" class="nav-link">
+  html/css
+</a></div><div class="nav-item"><a href="/WeiBo/js/" class="nav-link">
+  js
+</a></div><div class="nav-item"><a href="/WeiBo/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/WeiBo/react/" class="nav-link router-link-active">
+  react
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><span class="title">more</span> <span class="arrow down"></span></button> <button type="button" aria-label="more" class="mobile-dropdown-title"><span class="title">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          拓展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/Hybrid.html" class="nav-link">
+  混合开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/login.html" class="nav-link">
+  登录注册服务端
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/mysql.html" class="nav-link">
+  Mysql
+</a></li></ul></li><li class="dropdown-item"><h4>
+          更多
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/yunServer.html" class="nav-link">
+  云开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/ts.html" class="nav-link">
+  typeScript
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/webpack.html" class="nav-link">
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/Mrlai888" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/WeiBo/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/WeiBo/me/" class="nav-link">
+  个人中心
+</a></div><div class="nav-item"><a href="/WeiBo/html/" class="nav-link">
+  html/css
+</a></div><div class="nav-item"><a href="/WeiBo/js/" class="nav-link">
+  js
+</a></div><div class="nav-item"><a href="/WeiBo/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/WeiBo/react/" class="nav-link router-link-active">
+  react
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="more" class="dropdown-title"><span class="title">more</span> <span class="arrow down"></span></button> <button type="button" aria-label="more" class="mobile-dropdown-title"><span class="title">more</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          拓展
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/Hybrid.html" class="nav-link">
+  混合开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/login.html" class="nav-link">
+  登录注册服务端
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/mysql.html" class="nav-link">
+  Mysql
+</a></li></ul></li><li class="dropdown-item"><h4>
+          更多
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/WeiBo/more/yunServer.html" class="nav-link">
+  云开发
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/ts.html" class="nav-link">
+  typeScript
+</a></li><li class="dropdown-subitem"><a href="/WeiBo/more/webpack.html" class="nav-link">
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/Mrlai888" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/WeiBo/react/" aria-current="page" class="sidebar-link">react知识点整理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/WeiBo/react/home.html" class="sidebar-link">react基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#生命周期钩子函数" class="sidebar-link">生命周期钩子函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#挂载阶段" class="sidebar-link">挂载阶段</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#更新阶段" class="sidebar-link">更新阶段</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#销毁阶段" class="sidebar-link">销毁阶段</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#this指向总结" class="sidebar-link">this指向总结</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#react中定义的事件this指向默认是undefined-因为指向的事件是自定义的属性-只能其他方法通过改变this指向" class="sidebar-link" style="padding-left:3rem;">react中定义的事件this指向默认是undefined 因为指向的事件是自定义的属性，只能其他方法通过改变this指向</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#当事件-不传递参数时" class="sidebar-link">当事件 不传递参数时</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#传递参数时" class="sidebar-link">传递参数时</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#react-表单" class="sidebar-link">react-表单</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#受控组件" class="sidebar-link">受控组件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#非受控组件" class="sidebar-link">非受控组件</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#react-props" class="sidebar-link">react-props</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#props-的默认值设置" class="sidebar-link">props 的默认值设置</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#prop的校验" class="sidebar-link">prop的校验</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#自-react-v15-5-以后-react-propstypes-已经移入prop-types包中-安装-yarn-add-prop-types" class="sidebar-link" style="padding-left:3rem;">自 React v15.5 以后，react-propsTypes 已经移入prop-types包中  安装&quot;yarn add prop-types&quot;</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#组件通信context的两种使用方式" class="sidebar-link">组件通信context的两种使用方式</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#context使用" class="sidebar-link" style="padding-left:3rem;">context使用</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#第一种使用方式" class="sidebar-link" style="padding-left:3rem;">第一种使用方式</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#消费者-consumer-的第二种使用种方法" class="sidebar-link" style="padding-left:3rem;">消费者（Consumer）的第二种使用种方法</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#react中hook使用" class="sidebar-link">react中Hook使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#usestate" class="sidebar-link">useState</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#useeffect" class="sidebar-link">useEffect</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#usecontext" class="sidebar-link">useContext</a></li></ul></li><li class="sidebar-sub-header"><a href="/WeiBo/react/home.html#类组件-redux" class="sidebar-link">类组件 redux</a></li></ul></li><li><a href="/WeiBo/react/period.html" class="sidebar-link">生命周期</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/period.html#挂载阶段" class="sidebar-link">挂载阶段</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/period.html#更新阶段" class="sidebar-link">更新阶段</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/period.html#销毁阶段" class="sidebar-link">销毁阶段</a></li></ul></li><li><a href="/WeiBo/react/router.html" class="sidebar-link">React路由</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#react路由" class="sidebar-link">react路由</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#路由意义" class="sidebar-link">路由意义</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#react路由简介" class="sidebar-link">react路由简介</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#react路由使用" class="sidebar-link">react路由使用</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#路由页面组件-跟路由相关的组件就称为路由页面组件。" class="sidebar-link">路由页面组件（跟路由相关的组件就称为路由页面组件。）</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#路由页面组件会自动接收到3个prop" class="sidebar-link" style="padding-left:3rem;">路由页面组件会自动接收到3个prop</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#路由重定向-redirect-组件" class="sidebar-link">路由重定向 Redirect 组件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/router.html#路由拦截" class="sidebar-link">路由拦截</a></li></ul></li></ul></li><li><a href="/WeiBo/react/hook.html" aria-current="page" class="active sidebar-link">自定义HOOK</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/hook.html#自定义hook" class="sidebar-link">自定义HOOK</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/hook.html#初始化不渲染-useeffect" class="sidebar-link">初始化不渲染 useEffect</a></li></ul></li></ul></li><li><a href="/WeiBo/react/components.html" class="sidebar-link">自定义组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/components.html#自定义组件" class="sidebar-link">自定义组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/WeiBo/react/components.html#日历组件" class="sidebar-link">日历组件</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/components.html#仪表盘" class="sidebar-link">仪表盘</a></li><li class="sidebar-sub-header"><a href="/WeiBo/react/components.html#上传文件" class="sidebar-link">上传文件</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="自定义hook"><a href="#自定义hook" class="header-anchor">#</a> 自定义HOOK</h2> <h3 id="初始化不渲染-useeffect"><a href="#初始化不渲染-useeffect" class="header-anchor">#</a> 初始化不渲染 useEffect</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span><span class="token punctuation">{</span>useEffect<span class="token punctuation">,</span>useRef<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 是否第一次执行</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">useFirstMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>boolean<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> isFirstMount <span class="token operator">=</span> useRef<span class="token operator">&lt;</span>boolean<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>isFirstMount<span class="token punctuation">.</span>current<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        isFirstMount<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token boolean">false</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> isFirstMount<span class="token punctuation">.</span>current<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 首次渲染的时候不执行，当依赖发生变化的时候才执行函数</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> useUpdateEffect<span class="token operator">:</span> <span class="token keyword">typeof</span> <span class="token function-variable function">useEffect</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">effect<span class="token punctuation">,</span> deps</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">const</span> isFirstMount <span class="token operator">=</span> <span class="token function">useFirstMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isFirstMount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">...</span>deps<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">5/13/2022, 2:55:54 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/WeiBo/react/router.html" class="prev">
+        React路由
+      </a></span> <span class="next"><a href="/WeiBo/react/components.html">
+        自定义组件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/WeiBo/assets/js/app.de0b0b11.js" defer></script><script src="/WeiBo/assets/js/2.36bf89d1.js" defer></script><script src="/WeiBo/assets/js/26.8d0786bf.js" defer></script>
+  </body>
+</html>
