@@ -948,7 +948,8 @@ Vue Router的基本使用步骤：
 它就是先在页面中定义好跳转的路由规则，vueRouter中通过 router-link组件来完成
 
 ```html
-<!-- <router-link to="path">xxx</router-link>	to 要跳转到的路由规则  string|object	to="users"	:to="{path:'path'}" -->
+<!-- <router-link to="path">xxx</router-link> -->
+	to 要跳转到的路由规则  string|object	to="users"	:to="{path:'path'}"
 ```
 
 
