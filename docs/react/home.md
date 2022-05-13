@@ -424,6 +424,159 @@ const Three = () => {
 }
 ```
 
+##  类组件 redux
+
+```js
+// 目录
+// -redux
+//   -action
+//   -reducers
+        //-account.js
+        //-index.js
+//   -sages
+        // -api.js
+        // index.js
+//   -store
+
+// action  index.js 
+
+// ##########################
+
+export const DO_GET_ACCOUNT_4401_ACTION = "DO_GET_ACCOUNT_4401_ACTION";
+export const DONE_GET_ACCOUNT_4401_ACTION = "DONE_GET_ACCOUNT_4401_ACTION";
+
+export function doGetAccount4401Action(params, callback) {
+    return {
+        type: DO_GET_ACCOUNT_4401_ACTION,
+        params,
+        callback
+    }
+}
+
+export function doneGetAccount4401Action(result) {
+    return {
+        type: DONE_GET_ACCOUNT_4401_ACTION,
+        result
+    }
+}
+
+//##############################
+
+// reducers  account.js
+import {
+    DO_GET_ACCOUNT_4401_ACTION, DONE_GET_ACCOUNT_4401_ACTION,
+} from '../actions/account';
+
+export function doGetAccount4401Reducer(state = {}, action) {
+    switch (action.type) {
+        case DO_GET_ACCOUNT_4401_ACTION:
+            return state;
+        case DONE_GET_ACCOUNT_4401_ACTION:
+            return Object.assign({}, state, action.result);
+        default:
+            return state;
+    }
+}
+
+// reducers  index.js
+import { doGetAccount4401Reducer } from './account';
+
+export default combineReducers({
+    doQueryFPSInfoLoopReducer
+    })
+
+//########################################
+
+
+//sages api.js
+import FetchUtil from 'utils/FetchUtil';
+export function getAccount4401(params) {
+    return FetchUtil.post('/cocgw/4401', params);
+}
+
+// sages account.js
+import { put, call } from 'redux-saga/effects';
+import { doneGetAccount4401Action, } from 'redux/actions/account';
+import { getAccount4401} from './api'
+
+export function* doGetAccount4401(action) {
+    let result = {};
+    try {
+        const response = yield call(getAccount4401, action.params);
+        if (response) {
+            result = response;
+        }
+    } catch (ex) {
+        result.msg = ex;
+    }
+
+    action.callback && typeof action.callback === "function" && action.callback({ ...result });
+    yield put(doneGetAccount4401Action(result));  // dispach
+}
+
+// sages index
+import { DO_GET_ACCOUNT_4401_ACTION} from '../actions/account';
+import { doGetAccount4401 } from './account';
+
+
+export default function* index() {
+    yield [
+        takeLatest(DO_GET_ACCOUNT_4401_ACTION, doGetAccount4401) //takeLatest 同时多次调用函数会结束前面的任务只执行最后一条 // tackEvery 每个任务都会执行
+    ]
+}
+
+// #####################
+
+// store index.js
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import reducers from '../reducers';
+import root from '../sagas';
+
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  reducers,
+  applyMiddleware(sagaMiddleware)
+  // composeEnhancers(
+  //   applyMiddleware(sagaMiddleware)
+  // )
+)
+sagaMiddleware.run(root);
+export default store;
+
+//######################################
+
+//组件内使用
+
+import { doGetAccount4401Action } from 'redux/actions/account'; 
+
+  // 通过回调函数获取数据
+  this.props.doGetAccount4401Action({}, res => {
+            console.info('doGetAccount4401Action:', res)
+  })
+
+
+  render(
+    return (
+      <div></div>
+    )
+  )
+
+
+export default connect(function (state) {
+    return {
+        get4401Info: state.doGetAccount4401Reducer  // 等redux执行完后获取数据自动更新到state里
+    }
+}, {doGetAccount4401Action})(componment));//doGetAccount4401Action 派发的动作  componment组件
+
+
+
+
+```
+
+
 <style>
 h3{
   font-size:18px;

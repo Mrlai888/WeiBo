@@ -1,5 +1,5 @@
 module.exports = {
-  title: '个人博客',
+  title: '技术文档',
   description: '我的个人网站',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
     // ['link', { rel: 'icon', href: '//at.alicdn.com/t/font_1549951_lz1rwghwoof.css' }], // 增加一个自定义的 favicon(网页标签的图标)
