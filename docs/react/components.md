@@ -59,10 +59,9 @@ class CroBorDataPicker extends Component {
 
         const nextMonth = (month + 1) > 12 ? 1 : (month + 1); // 下个月
         const prevMonth = (month - 1) < 1 ? 12 : (month - 1);  // 上个月
-        const nowadays = d || date.getDate(); // 当前时间
-        let nowTime = null;
-        if ((year == date.getFullYear() && month == date.getMonth() + 1) || d) {
-            nowTime = nowadays
+        let nowadays = d || date.getDate(); // 当前时间
+        if (year == date.getFullYear() && month == date.getMonth() + 1 && nowadays == date.getDate()) {
+            nowadays = nowadays + 1
         }
         // console.log(year, month,'year, month')
         this.getMonthDate(year, month, 0)
@@ -70,10 +69,9 @@ class CroBorDataPicker extends Component {
         this.getMonthDate((month + 1) > 12 ? year + 1 : year, nextMonth, 1)
         this.getMonthDate((month - 1) < 1 ? year - 1 : year, prevMonth, 2)
         this.setState({
-            date,
             year,
             month,
-            nowadays: nowTime,
+            nowadays
         });
     };
 
@@ -127,7 +125,7 @@ class CroBorDataPicker extends Component {
         pickerListRes[index] = dayListItem
         let result = JSON.parse(JSON.stringify(pickerListRes))
 
-        this.setState({ dayList: daysList,pickerList: result })
+        this.setState({ dayList: daysList, pickerList: result })
     }
 
     // 把一维日期切成二维日期
@@ -143,7 +141,7 @@ class CroBorDataPicker extends Component {
         return hlist;
     };
 
- // 点击左右按钮滑动
+    // 点击左右按钮滑动
 
     handleMonth(flag) {
         console.log(this.state.dayList, 'dayList')
@@ -159,18 +157,16 @@ class CroBorDataPicker extends Component {
                 return
             }
             index = index - 1 < 0 ? 2 : index - 1
-            this.handleslideToLoop(index,900,currentCard,'slidePrev')
+            this.handleslideToLoop(index, 900, currentCard, 'slidePrev')
         }
         else {
             index = index + 1 > 2 ? 0 : index + 1
-            this.handleslideToLoop(index,900,currentCard,'slideNext')
+            this.handleslideToLoop(index, 900, currentCard, 'slideNext')
         }
-
-        
     }
 
-    handleslideToLoop = async(index,speed=2000,currentCard,methods)=>{
-        console.log(index,'indexx')
+    handleslideToLoop = async (index, speed = 2000, currentCard, methods) => {
+        console.log(index, 'indexx')
         this.swiperInstance && this.swiperInstance[methods](1000, async () => {
             let thisMonthInfo = this.state.dayList[currentCard]
             let { year, month } = thisMonthInfo;
@@ -199,33 +195,34 @@ class CroBorDataPicker extends Component {
     }
 
     // 点击每个日期
-    handleDateItemClick = (dateItem, i, j) => () => {
+    handleDateItemClick = (e) => {
         const { year, month, date, nowadays } = this.state;
-        const { isSelected, isNeedTag, dayNum } = dateItem;
-        if (dayNum === 0) return;
-        const selectDate = new Date(`${year}-${month}-${dayNum}`);
-        if (nowadays === dayNum) {// 今天不可被选择
-            l("不可选择");
-            return;
-        } else if (selectDate > date) {
-            l("ok", new Date(selectDate));
+        let data = e.target.getAttribute('datedata')
+        if(data){
+            let dateItem = JSON.parse(data)
+            const { isSelected, isNeedTag, dayNum } = dateItem;
+            if (dayNum === 0) return;
+            const selectDate = new Date(`${year}-${month}-${dayNum}`);
+            console.log("ok", selectDate.getTime(), new Date().getTime());
+            if (selectDate.getTime() <= new Date().getTime()) {// 今天不可被选择
+                l("不可选择");
+                return;
+            }
+            if (isSelected)
+                // 小于今天的日期不能被选择
+                return;
+    
+            this.setState(state => {
+                // const hlist = state.hlist.slice();
+                // hlist[i][j].isNeedTag = true;
+                return {
+                    // hlist,
+                    nowadays: dayNum
+                };
+            });
+            console.log(year, month, dayNum, '点击每个日期')
+            this.props.onSelectCroBorDate && this.props.onSelectCroBorDate({ year, month, dayNum })
         }
-
-        if (isSelected)
-            // 小于今天的日期不能被选择
-            return;
-
-        this.setState(state => {
-            // const hlist = state.hlist.slice();
-            const currentData = selectDate.getDate()
-            // hlist[i][j].isNeedTag = true;
-            return {
-                // hlist,
-                nowadays: currentData
-            };
-        });
-        console.log(year, month, dayNum,'点击每个日期')
-        this.props.onSelectCroBorDate && this.props.onSelectCroBorDate({ year, month, dayNum })
     };
 
     // 切换轮播图
@@ -263,7 +260,7 @@ class CroBorDataPicker extends Component {
         const currentYear = this.state.year
         let year = new Date().getFullYear();
         let yearArr = []
-        for (let i = year; i < 2100; i++) {
+        for (let i = year; i < year+99; i++) {
             yearArr.push(i)
         }
         let yearList = _.chunk(yearArr, 3); // 转化为二维数组
@@ -294,15 +291,38 @@ class CroBorDataPicker extends Component {
         )
     }
 
-    handleSelectYear(year) {
-        console.log(year,this.state.month, 'year')
-        let month = this.state.month || new Date().getMonth()+1
-        this.initState({ y: parseInt(year),m:month })
-        this.setState({ isShowDateSelect: false })
+    async handleSelectYear(year) {
+        console.log(year, this.state.month,this.state.currentCard, 'year')
+        let month = this.state.month;
+        let index = this.state.currentCard;
+        // this.initState({ y: parseInt(year), m: month })
+        const nextMonth = (month + 1) > 12 ? 1 : (month + 1); // 下个月
+        const prevMonth = (month - 1) < 1 ? 12 : (month - 1);  // 上个月
+        // index 0当前月  1 下个月   2上个月
+        if (index === 0) {
+            // 当前月，需要计算上一月、下一月
+            await this.getMonthDate((month + 1) > 12 ? year + 1 : year, nextMonth, 1)
+            await this.getMonthDate(year, month, index)
+            await this.getMonthDate((month - 1) < 1 ? year - 1 : year, prevMonth, 2)
+        } else if (index === 1) {
+            // 下个月，需要计算当前月、上个月
+            await this.getMonthDate((month + 1) > 12 ? year + 1 : year, nextMonth, 2)
+            await this.getMonthDate(year, month, index)
+            await this.getMonthDate((month - 1) < 1 ? year - 1 : year, prevMonth, 0)
+        } else if (index === 2) {
+            // 上个月，需要计算当前月、下个月
+            await this.getMonthDate((month + 1) > 12 ? year + 1 : year, nextMonth, 0)
+            await this.getMonthDate(year, month, index)
+            await this.getMonthDate((month - 1) < 1 ? year - 1 : year, prevMonth, 1)
+        }
+        this.setState({
+            year, 
+            isShowDateSelect: false
+         })
     }
 
+
     showDate(list) {
-        // console.log(list,'list')
         const { nowadays } = this.state;
         return (
             <>
@@ -313,25 +333,20 @@ class CroBorDataPicker extends Component {
                                 return (
                                     <tr key={i}>
                                         {item.map((dateItem, index) => {
-                                            // console.log(item,'itemmmm')
+                                            // console.log(dateItem,'itemmmm')
                                             const dayNum = dateItem.dayNum;
                                             // const isNeedTag = dateItem.isNeedTag;
                                             const isSelected = dateItem.isSelected;
-                                            // const isToday = dayNum === new Date().getDate()
-                                            let currentDate = null
-                                            if (nowadays === new Date().getDate()) {
-                                                currentDate = nowadays + 1
-                                            } else {
-                                                currentDate = nowadays
-                                            }
+                                            let val = dateItem?JSON.stringify(dateItem):'{}'
                                             return (
                                                 <td
                                                     key={`${dayNum}-${index}-${Math.random()}`}
                                                     className={isSelected ? 'data-picker-dateitem disabel' : 'data-picker-dateitem'}
-                                                    onClick={this.handleDateItemClick(dateItem, i, index)}
+                                                    datedata={val}
                                                 >
-                                                    {/* <div className={dayNum === nowadays ? 'data-picker-nowdaytime' : isToday ? 'data-picker-daytime today' : 'data-picker-daytime'}>{dayNum ? dayNum : ''}</div> */}
-                                                    <div className={dayNum === currentDate ? 'data-picker-nowdaytime' : 'data-picker-daytime'}>{dayNum ? dayNum : ''}</div>
+                                                    <div
+                                                     datedata={val}
+                                                     className={dayNum === nowadays ? 'data-picker-nowdaytime' : 'data-picker-daytime'}>{dayNum ? dayNum : ''}</div>
                                                 </td>
                                             );
                                         })
@@ -361,9 +376,6 @@ class CroBorDataPicker extends Component {
                     </div>)}
                 </div>
                 <div className='data-picker-content'
-                // onTouchEnd={touch.onTouchEnd}
-                // onTouchStart={touch.onTouchStart}
-                // onTouchMove={touch.onTouchMove}
                 >
                     {isShowDateSelect && this.selectDateCard()}
                     {weeks.map(el => (
@@ -371,22 +383,14 @@ class CroBorDataPicker extends Component {
                     ))}
                     <div className='data-picker-label'>
                         <div className="swiper-container">
-                            <div className="swiper-wrapper">
-                                <div className="swiper-slide" key={Math.random().toString(36).substr(2)}>
-                                    {
-                                        this.showDate(pickerList[0])
-                                    }
-                                </div>
-                                <div className="swiper-slide" key={Math.random().toString(36).substr(2)}>
-                                    {
-                                        this.showDate(pickerList[1])
-                                    }
-                                </div>
-                                <div className="swiper-slide" key={Math.random().toString(36).substr(2)}>
-                                    {
-                                        this.showDate(pickerList[2])
-                                    }
-                                </div>
+                            <div className="swiper-wrapper" onClick={(e)=>this.handleDateItemClick(e)}>
+                                {[0, 1, 2].map(item => {
+                                    return (<div className="swiper-slide" key={item}>
+                                        {
+                                            this.showDate(pickerList[item])
+                                        }
+                                    </div>)
+                                })}
                             </div>
                         </div>
                     </div>
@@ -417,8 +421,6 @@ class CroBorDataPicker extends Component {
             const SwiperInstance = new Swiper('.swiper-container', {
                 //各卡片之间的间距
                 spaceBetween: 10,
-                //    slidesOffsetBefore:-6,
-                //    slidesOffsetAfter:8,
                 // //卡片轮播方向
                 direction: 'horizontal',
                 loop: true, // 循环播放
@@ -430,20 +432,18 @@ class CroBorDataPicker extends Component {
                 autoplay: false,
                 // // 播放的速度
                 speed: 1000,
+                preventLinksPropagation: false,//防止冒泡
                 on: {
                     slideChangeTransitionEnd: function (swiper) {
                         // alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
                         self.getCurrentCardNum(this.realIndex, swiper);
-                    },
-                    slideChange: function () {
-                        console.log('改变了，activeIndex为' + this.realIndex);
                     },
                 }
             });
 
             self.swiperInstance = SwiperInstance
 
-        }, 200)
+        },0)
         //swiper的配置
 
     }
